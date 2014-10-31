@@ -1,2 +1,2 @@
-oh-my-emacs
-===========
+# Oh my emacs
+

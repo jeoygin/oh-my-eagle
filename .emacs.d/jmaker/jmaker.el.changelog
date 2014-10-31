@@ -1,0 +1,148 @@
+2002-01-09  David Ponce  <david@dponce.com>
+
+	* jmaker.el: Version 2.1.
+
+2001-10-26  David Ponce  <david@dponce.com>
+
+	* jmaker.el: Require 'jde-compile instead of 'jde.
+	(jmaker-make-use-jde-settings): New option.  If non-nil use JDE's
+	current compilation options else use value of jmaker variables
+	`jmaker-make-compiler' and `jmaker-make-compiler-options'.
+	(jmaker-make-compiler): New option.  The default compiler used by
+	jmaker.
+	(jmaker-make-compiler-options):  New option.  The default compiler
+	options used by jmaker.
+	(jmaker-make-compiler): New function.  Return the Java compiler to
+	use.
+	(jmaker-make-compiler-options): New function.  Return the Java
+	compiler args.
+	(jmaker-makefile-buffer-template): Use `jmaker-make-compiler' and
+	`jmaker-make-compiler-options'.
+	(jmaker-makefile-generator): Don't load JDE project file if
+	`jmaker-make-use-jde-settings' is nil.
+
+2000-08-18  David Ponce  <david@dponce.com>
+
+	* jmaker.el: New major version 2.0 of jmaker.el.
+	There is no more meta Makefiles. New generated Makefiles automatically
+	process all sub-directories of a project :-). So, jmaker provides only
+	one command to generate Makefiles in a project directory tree:
+	`jmaker-generate-makefile'.
+	IMPORTANT: the new Makefile template is not compatible with the one
+	created by previous versions of jmaker. You must reset
+	`jmaker-makefile-buffer-template' to its standard settings and redo
+	any customization you have made. Sorry!
+
+2000-08-16  David Ponce  <david@dponce.com>
+
+	* jmaker.el: Improved XEmacs compatibility.
+	Fixed a side effect bug in `jmaker-get-makefiles-in-tree'.
+	Thanks to Stephane Nicolas <s.nicolas@videotron.ca> for providing
+	these fixes.
+	Improved dialog mode. Can use 'q' to cancel a dialog and left mouse to
+	click on dialog button.
+	Changed comments to follow standard Emacs coding convention.
+
+2000-05-25  David Ponce  <david@dponce.com>
+
+	* jmaker.el: JMaker menu setup now done in `jde-mode-hook'.
+
+2000-05-12  David Ponce  <david@dponce.com>
+
+	* jmaker.el:
+	Added new function `jmaker-set-buffer-end-of-line-style' to force the
+	end-of-line style used when writing a Makefile (for example, this can
+	be useful when using a Unix make program, like the one provided in
+	cygwin 1.1.0, under Windows). The default end-of-line style follows
+	Unix convention (LF). This can be changed by customizing the new
+	variable `jmaker-end-of-line-style'.
+
+2000-04-14  David Ponce  <david@dponce.com>
+
+	* jmaker.el: With `directory-sep-char' value set to '\' jmaker did not
+	correctly handle directory pathes when generating meta Makefile.
+	To fix this, jmaker enforce usage of an Unix style separator '/'
+	in `jmaker-sub-makefile-targets' function.
+	`jmaker-convert-directory-to-package' now works with different
+	values of `directory-sep-char'.
+
+2000-03-31  David Ponce  <david@dponce.com>
+
+	* jmaker.el: Documentation changes.
+
+	* jmaker.el: Minor changes in code presentation.
+	Improved version of `jmaker-convert-directory-to-package'.
+
+	* jmaker.el: Code cleanup and better variables and functions naming.
+	As requested by "David Turland" <dtrurland@axarte.com> I have
+	enhanced the `jmaker-generate-meta-makefile' command to ask for
+	updating or creating the Makefiles in the directory tree
+	before generating the meta Makefile.
+
+	* jmaker.el: This is a major rewrite of jmaker to add the new
+	`jmaker-generate-all-makefiles' command.
+	Thanks to "David Turland" <dtrurland@axarte.com> who has suggested
+	this enhancement.
+
+1999-07-05  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el: May be the jmaker menu works with XEmacs?
+
+1999-06-04  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el: Added a "Make" option to the menu  (GNU Emacs only)
+	to launch the standard `compile' command.
+
+1999-04-22  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el: Added `autoload' cookies.
+
+1998-11-27  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el: Compatibility issue. jmaker now has its own menu item on
+	the menu bar (GNU Emacs only!). This avoid compatibility
+	problem when the JDE menu structure change (as in 2.1.2).
+
+1998-10-20  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el:
+	Have run `untabify' on the whole source (follows a remark from ricky@siemensdc.com).
+
+1998-10-08  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el:
+	Usage comments added related to the new meta Makefiles feature.
+
+1998-10-05  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el:
+	`jmaker-generate-...' commands now generate file buffers and
+	require confirmation if the file already exists.
+
+	* jmaker.el: Added super Makefile generation.
+	Some coding optimized and simplified.
+
+1998-09-29  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el: New version-number management functions.
+
+1998-09-28  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el: Copyright notice updated.
+
+	* jmaker.el:
+	Fixed an error in function `jmaker-version-number' which did not display
+	the version number.
+
+1998-09-15  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el: Added support for Emacs 20.3.1.
+	From Paul Kinnucan: "Emacs 20.3.1 fixes a bug in the derive
+	mode macro that caused the jde-mode hook variable to be named
+	`jde-mode-hooks' (note plural) instead of `jde-mode-hook' (singular),
+	which is customary."
+
+1998-07-22  ebat311  <ebat311@EBAT311>
+
+	* jmaker.el: New file.
+
