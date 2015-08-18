@@ -322,6 +322,35 @@ and when jumping back, it will be removed.")
 ;; (global-set-key "\C-c\C-c" 'clipboard-kill-ring-save) 
 ;; (global-set-key "\C-c\C-v" 'clipboard-yank) 
 
+(defun copy-to-x-clipboard ()
+  (interactive)
+  (if (region-active-p)
+    (progn
+     ; my clipboard manager only intercept CLIPBOARD
+      (shell-command-on-region (region-beginning) (region-end)
+        (cond
+         ((eq system-type 'cygwin) "putclip")
+         ((eq system-type 'darwin) "pbcopy")
+         (t "xsel -ib")
+         )
+        )
+      (message "Yanked region to clipboard!")
+      (deactivate-mark))
+    (message "No region active; can't yank to clipboard!")))
+(defun paste-from-x-clipboard()
+  (interactive)
+  (shell-command
+   (cond
+    ((eq system-type 'cygwin) "getclip")
+    ((eq system-type 'darwin) "pbpaste")
+    (t "xsel -ob")
+    )
+   1)
+  )
+
+(global-set-key "\C-c\C-c" 'copy-to-x-clipboard)
+(global-set-key "\C-c\C-v" 'paste-from-x-clipboard)
+
 ;; =====================================END=====================================
 
 ;; Buffer: 
@@ -541,36 +570,6 @@ and when jumping back, it will be removed.")
 ;; (setq w3m-coding-system-priority-list '(euc-cn))
 ;; (setq w3m-file-name-coding-system 'euc-cn)
 ;; (setq w3m-bookmark-file-coding-system 'euc-cn)
-
-;; =====================================END=====================================
-
-;; Clipboard:
-
-(defun copy-to-x-clipboard ()
-  (interactive)
-  (if (region-active-p)
-    (progn
-     ; my clipboard manager only intercept CLIPBOARD
-      (shell-command-on-region (region-beginning) (region-end)
-        (cond
-         ((eq system-type 'cygwin) "putclip")
-         ((eq system-type 'darwin) "pbcopy")
-         (t "xsel -ib")
-         )
-        )
-      (message "Yanked region to clipboard!")
-      (deactivate-mark))
-    (message "No region active; can't yank to clipboard!")))
-(defun paste-from-x-clipboard()
-  (interactive)
-  (shell-command
-   (cond
-    ((eq system-type 'cygwin) "getclip")
-    ((eq system-type 'darwin) "pbpaste")
-    (t "xsel -ob")
-    )
-   1)
-  )
 
 ;; =====================================END=====================================
 
