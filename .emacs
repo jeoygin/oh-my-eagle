@@ -586,3 +586,30 @@ and when jumping back, it will be removed.")
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/emacs-color-theme-solarized")
 (load-theme 'solarized t)
+
+;; =====================================END=====================================
+
+;; ELPA
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list 'package-archives
+    '("melpa" . "http://melpa.org/packages/") t)
+  (package-initialize))
+
+;; =====================================END=====================================
+
+;; goflymake
+(add-to-list 'load-path "~/go/src/github.com/dougm/goflymake")
+(require 'go-flymake)
+(require 'go-flycheck)
+
+;; goeldoc
+(add-hook 'go-mode-hook 'go-eldoc-setup)
+
+;; go-autocomplete
+(add-to-list 'load-path "~/.emacs.d/go/go-autocomplete.el")
+(require 'go-autocomplete)
+
+;; auto complete
+(require 'auto-complete-config)
+(ac-config-default)
