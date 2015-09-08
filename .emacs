@@ -351,6 +351,18 @@ and when jumping back, it will be removed.")
 (global-set-key "\C-c\C-c" 'copy-to-x-clipboard)
 (global-set-key "\C-c\C-v" 'paste-from-x-clipboard)
 
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
+
+(global-set-key "\C-c\C-y" 'duplicate-line)
+
 ;; =====================================END=====================================
 
 ;; Buffer: 
