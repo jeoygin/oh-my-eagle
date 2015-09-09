@@ -113,11 +113,4 @@
 (require 'package-load-define)
 
 ;; Load packages
-(load-package-elpa)
-(load-package-x-clipboard)
-(load-package-bracket)
-(load-package-tab)
-(load-package-color-theme)
-(load-package-yasnippet)
-(load-package-ecb)
-
+(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb))

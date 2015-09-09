@@ -90,4 +90,11 @@
   (load-package-java)
   (load-package-go))
 
+(defun load-package(packages)
+  (interactive)
+  (if (listp packages)
+    (dolist (f (append packages '()))
+      (funcall (intern (concat "load-package-" (symbol-name f)))))
+    nil))
+
 (provide 'package-load-define)
