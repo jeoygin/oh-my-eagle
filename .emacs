@@ -113,4 +113,6 @@
 (require 'package-load-define)
 
 ;; Load packages
+(setq package-enable-at-startup nil)
+(setq package-load-list '((go-mode t) (go-eldoc t)))
 (load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb))
