@@ -5,7 +5,6 @@
 
 (dolist (file (directory-files (file-name-directory load-file-name) nil "^.+-load\\.el$"))
   (let ((package-name (replace-regexp-in-string "-load\\.el$" "" file)))
-    (message "%s" package-name)
     (eval (macroexpand `(create-load-package-defun ,package-name)))))
 
 (defun load-package(packages)
