@@ -19,7 +19,9 @@
 (set-background-color "black")
 
 ;; Without tool bar: 
-(tool-bar-mode nil)
+(when (memq window-system '(mac ns))
+  nil
+  (tool-bar-mode nil))
 
 ;; Time: 
 (display-time-mode 1)
