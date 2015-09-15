@@ -108,11 +108,22 @@
 ;; Set Compile Command as make: 
 (setq compile-command "make")
 
+;; zip-to-char:
+(global-set-key "\M-z" 'zzz-to-char)
+(global-set-key "\M-Z" 'zzz-up-to-char)
+
 ;; Define package load commands
 (add-to-list 'load-path "~/.emacs.d/user")
 (require 'package-load-define)
 
 ;; Load packages
 (setq package-enable-at-startup nil)
-(setq package-load-list '((auto-complete t) (go-mode t) (go-eldoc t) (ztree t) (ecb t) (xcscope t) all))
+(setq package-load-list '((auto-complete t)
+                          (go-mode t)
+                          (go-eldoc t)
+                          (ztree t)
+                          (ecb t)
+                          (xcscope t)
+                          (zzz-to-char t)
+                          all))
 (load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope))
