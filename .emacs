@@ -109,10 +109,10 @@
 (setq compile-command "make")
 
 ;; Define package load commands
-(add-to-list 'load-path "~/.emacs.d/load")
+(add-to-list 'load-path "~/.emacs.d/user")
 (require 'package-load-define)
 
 ;; Load packages
 (setq package-enable-at-startup nil)
-(setq package-load-list '((go-mode t) (go-eldoc t)))
-(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb))
+(setq package-load-list '((auto-complete t) (go-mode t) (go-eldoc t) (ztree t) (ecb t) (xcscope t) all))
+(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope))
