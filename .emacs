@@ -119,6 +119,7 @@
 (require 'package-load-define)
 
 ;; Load packages
+(setq package-user-dir "~/.emacs.d/elpa")
 (setq package-enable-at-startup nil)
 (setq package-load-list '((auto-complete t)
                           (go-mode t)
