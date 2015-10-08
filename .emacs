@@ -128,5 +128,7 @@
                           (ecb t)
                           (xcscope t)
                           (zzz-to-char t)
+                          (python-mode t)
+                          (jedi t)
                           all))
-(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope))
+(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope python))
