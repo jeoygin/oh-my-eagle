@@ -2,50 +2,13 @@
 (setq-default tab-width 4)
 (setq indent-tabs-mode nil)
 (setq tab-width 4)
-(setq tab-stop-list '(0 4 8 12 16 20 24 28 32 36 40
-      44 48 52 56 60 64 68 72 76 80 84 88 92 96))
 
-(defconst my-c-style
-  '((c-tab-always-indent        . t)
-    (c-comment-only-line-offset . 4)
-    (c-hanging-braces-alist     . ((substatement-open after)
-                                   (brace-list-open)))
-    (c-hanging-colons-alist     . ((member-init-intro before)
-                                   (inher-intro)
-                                   (case-label after)
-                                   (label after)
-                                   (access-label after)))
-    (c-cleanup-list             . (scope-operator
-                                   empty-defun-braces
-                                   defun-close-semi))
-    (c-offsets-alist            . ((arglist-close . c-lineup-arglist)
-                                   (substatement-open . 0)
-                                   (case-label        . 4)
-                                   (block-open        . 0)
-                                   (knr-argdecl-intro . -)))
-    (c-echo-syntactic-information-p . t)
-    )
-  "My C Programming Style")
+(global-set-key (kbd "RET") 'newline-and-indent)
 
-;; offset customizations not in my-c-style
-(setq c-offsets-alist '((member-init-intro . ++)))
+;; activate whitespace-mode to view all whitespace characters
+(global-set-key (kbd "C-c w") 'whitespace-mode)
 
-;; Customizations for all modes in CC Mode.
-(defun my-c-mode-common-hook ()
-  ;; add my personal style and set it for the current buffer
-  (c-add-style "PERSONAL" my-c-style t)
-  ;; other customizations
-  (setq tab-width 4
-        ;; this will make sure spaces are used instead of tabs
-        indent-tabs-mode nil)
-  ;; we like auto-newline and hungry-delete
-;  (c-toggle-auto-hungry-state 1)
-  ;; key bindings for all supported languages.  We can put these in
-  ;; c-mode-base-map because c-mode-map, c++-mode-map, objc-mode-map,
-  ;; java-mode-map, idl-mode-map, and pike-mode-map inherit from it.
-  (define-key c-mode-base-map "\C-m" 'c-context-line-break)
-  )
-
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+;; show unncessary whitespace that can mess up your diff
+(add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
 (provide 'tab-load)

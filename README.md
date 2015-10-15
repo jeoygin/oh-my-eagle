@@ -17,3 +17,7 @@ export PATH=${PATH}:${GOPATH}/bin
 $ go get -u github.com/dougm/goflymake
 $ go get -u github.com/nsf/gocode
 ```
+
+### C/C++
+
+* [GNU Global](http://www.gnu.org/software/global/)
