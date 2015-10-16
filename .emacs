@@ -110,6 +110,9 @@
 ;; Set Compile Command as make: 
 (setq compile-command "make")
 
+;; Switch Buffer:
+(global-set-key [(f6)] (lambda() (interactive) (switch-to-buffer (other-buffer (current-buffer) nil))))
+
 ;; zip-to-char:
 (global-set-key "\M-z" 'zzz-to-char)
 (global-set-key "\M-Z" 'zzz-up-to-char)
@@ -118,12 +121,27 @@
 (add-to-list 'load-path "~/.emacs.d/user")
 (require 'package-load-define)
 
+;; Make sure all packages are installed
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+   Return a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     ;; (package-installed-p 'evil)
+     (if (package-installed-p package)
+	 nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+	   (package-install package)
+	 package)))
+   packages))
+
 ;; Load packages
 (setq package-user-dir "~/.emacs.d/elpa")
 (setq package-enable-at-startup nil)
 (setq package-load-list '((auto-complete t)
                           (company t)
                           (company-c-headers t)
+                          (company-irony t)
                           (ecb t)
                           (function-args t)
                           (ggtags t)
@@ -133,11 +151,14 @@
                           (helm-gtags t)
                           (helm-projectile t)
                           (helm-swoop t)
+                          (irony t)
                           (jedi t)
                           (python-mode t)
                           (sr-speedbar t)
+                          (tabbar t)
+                          (use-package t)
                           (xcscope t)
                           (ztree t)
                           (zzz-to-char t)
                           all))
-(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp helm company))
+(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp helm irony company tabbar))

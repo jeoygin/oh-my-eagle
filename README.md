@@ -21,3 +21,6 @@ $ go get -u github.com/nsf/gocode
 ### C/C++
 
 * [GNU Global](http://www.gnu.org/software/global/)
+* $ brew install llvm --with-clang
+* M-x irony-install-server RET
+

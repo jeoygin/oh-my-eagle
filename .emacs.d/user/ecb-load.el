@@ -1,6 +1,3 @@
-(custom-set-variables
- '(ecb-options-version "2.40"))
-
 (setq ecb-tip-of-the-day nil)
 (setq byte-compile-warnings nil)
 (setq stack-trace-on-error nil)
@@ -8,6 +5,16 @@
 (setq ecb-layout-name "leftright2")
 (setq ecb-show-sources-in-directories-buffer 'always)
 ;; (setq ecb-compile-window-height 4)
+
+(custom-set-variables
+ '(ecb-layout-window-sizes
+   (quote
+    (("leftright2"
+      (ecb-directories-buffer-name 0.15 . 0.6097560975609756)
+      (ecb-sources-buffer-name 0.15 . 0.34146341463414637)
+      (ecb-methods-buffer-name 0.2 . 0.6097560975609756)
+      (ecb-history-buffer-name 0.2 . 0.34146341463414637)))))
+ '(ecb-options-version "2.40"))
 
 ;; activate and deactivate ecb
 (global-set-key (kbd "C-x C-;") 'ecb-activate)
