@@ -23,4 +23,5 @@ $ go get -u github.com/nsf/gocode
 * [GNU Global](http://www.gnu.org/software/global/)
 * $ brew install llvm --with-clang
 * M-x irony-install-server RET
+* export GTAGSLIBPATH=$HOME/.gtags/
 

@@ -1,3 +1,5 @@
+(require 'use-package)
+
 (use-package irony
   :ensure t
   :defer t

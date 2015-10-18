@@ -1,3 +1,5 @@
+(require 'use-package)
+
 (use-package company
   :ensure t
   :defer t
@@ -10,10 +12,8 @@
 	company-show-numbers            t
 	company-tooltip-limit           20
 	company-dabbrev-downcase        nil
+	company-backends                '((company-c-headers company-irony company-gtags))
 	)
-  (add-to-list 'company-backends 'company-irony)
-  (add-to-list 'company-backends 'company-gtags)
-  (add-to-list 'company-backends 'company-c-headers)
   :bind ("M-'" . company-complete-common)
   )
 
