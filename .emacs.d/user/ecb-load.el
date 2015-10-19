@@ -10,10 +10,10 @@
  '(ecb-layout-window-sizes
    (quote
     (("leftright2"
-      (ecb-directories-buffer-name 0.15 . 0.6097560975609756)
-      (ecb-sources-buffer-name 0.15 . 0.34146341463414637)
-      (ecb-methods-buffer-name 0.2 . 0.6097560975609756)
-      (ecb-history-buffer-name 0.2 . 0.34146341463414637)))))
+      (ecb-directories-buffer-name 0.1 . 0.6097560975609756)
+      (ecb-sources-buffer-name 0.1 . 0.34146341463414637)
+      (ecb-methods-buffer-name 0.15 . 0.6097560975609756)
+      (ecb-history-buffer-name 0.15 . 0.34146341463414637)))))
  '(ecb-options-version "2.40"))
 
 ;; activate and deactivate ecb
