@@ -156,6 +156,7 @@
                           (python-mode t)
                           (sr-speedbar t)
                           (tabbar t)
+                          (tabbar-ruler t)
                           (use-package t)
                           (xcscope t)
                           (ztree t)
