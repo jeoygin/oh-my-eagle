@@ -26,7 +26,7 @@
     )
    1))
 
-(global-set-key "\C-c\C-c" 'copy-to-x-clipboard)
-(global-set-key "\C-c\C-v" 'paste-from-x-clipboard)
+(global-set-key "\C-cc" 'copy-to-x-clipboard)
+(global-set-key "\C-cv" 'paste-from-x-clipboard)
 
 (provide 'x-clipboard-load)

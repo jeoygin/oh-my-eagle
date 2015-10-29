@@ -153,6 +153,7 @@
                           (helm-swoop t)
                           (irony t)
                           (jedi t)
+                          (org-plus-contrib t)
                           (python-mode t)
                           (sr-speedbar t)
                           (tabbar t)
@@ -162,4 +163,4 @@
                           (ztree t)
                           (zzz-to-char t)
                           all))
-(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp helm irony company tabbar))
+(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp irony company tabbar org))
