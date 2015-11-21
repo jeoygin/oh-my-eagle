@@ -117,6 +117,8 @@
 (global-set-key "\M-z" 'zzz-to-char)
 (global-set-key "\M-Z" 'zzz-up-to-char)
 
+(setq js-indent-level 2)
+
 ;; Define package load commands
 (add-to-list 'load-path "~/.emacs.d/user")
 (require 'package-load-define)
