@@ -74,8 +74,8 @@
   (yank)
 )
 
-(global-set-key "\C-c\C-y" 'duplicate-line)
-(global-set-key "\C-c\C-d" 'kill-whole-line)
+(global-set-key "\C-cy" 'duplicate-line)
+(global-set-key "\C-cd" 'kill-whole-line)
 
 ;; Mark: 
 (global-set-key "\C-cm" 'set-mark-command) 
