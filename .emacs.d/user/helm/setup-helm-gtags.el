@@ -30,4 +30,9 @@
 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 
+(define-key helm-gtags-mode-map (kbd "C-c g s") 'helm-gtags-find-symbol)
+(define-key helm-gtags-mode-map (kbd "C-c g r") 'helm-gtags-find-rtag)
+(define-key helm-gtags-mode-map (kbd "C-c g f") 'helm-gtags-find-files)
+(define-key helm-gtags-mode-map (kbd "C-c g h") 'helm-gtags-show-stack)
+
 (provide 'setup-helm-gtags)

@@ -113,11 +113,18 @@
 ;; Switch Buffer:
 (global-set-key [(f6)] (lambda() (interactive) (switch-to-buffer (other-buffer (current-buffer) nil))))
 
+;; Move to Window:
+(global-set-key (kbd "C-c <left>")  'windmove-left)
+(global-set-key (kbd "C-c <right>") 'windmove-right)
+(global-set-key (kbd "C-c <up>")    'windmove-up)
+(global-set-key (kbd "C-c <down>")  'windmove-down)
+
 ;; zip-to-char:
 (global-set-key "\M-z" 'zzz-to-char)
 (global-set-key "\M-Z" 'zzz-up-to-char)
 
 (setq js-indent-level 2)
+(setq-default c-basic-offset 4)
 
 ;; Define package load commands
 (add-to-list 'load-path "~/.emacs.d/user")
@@ -165,4 +172,4 @@
                           (ztree t)
                           (zzz-to-char t)
                           all))
-(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp irony company tabbar org))
+(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp irony company tabbar org ace-window))
