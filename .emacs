@@ -63,20 +63,6 @@
 ;; Goto line
 (global-set-key "\C-c\C-g" 'goto-line)
 
-;; Duplicate and delete one line
-(defun duplicate-line()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (yank)
-  (open-line 1)
-  (next-line 1)
-  (yank)
-)
-
-(global-set-key "\C-cy" 'duplicate-line)
-(global-set-key "\C-cd" 'kill-whole-line)
-
 ;; Mark: 
 (global-set-key "\C-cm" 'set-mark-command) 
 
@@ -88,7 +74,7 @@
   (outline-mode)
   (hide-body))
 
-(global-set-key "\C-ck" 'open-key-info-file)
+(global-set-key "\C-c\C-k" 'open-key-info-file)
 
 ;; Disable Control + Space: 
 (global-set-key (kbd "C-SPC") 'nil)
@@ -172,4 +158,4 @@
                           (ztree t)
                           (zzz-to-char t)
                           all))
-(load-package '(elpa x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp irony company tabbar org ace-window))
+(load-package '(elpa common x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp irony company tabbar org ace-window))
