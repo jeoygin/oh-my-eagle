@@ -9,6 +9,8 @@
   (unless (package-installed-p 'use-package)
     (package-refresh-contents)
     (package-install 'use-package))
+  (unless package-archive-contents
+    (package-refresh-contents))
   )
 
 (provide 'elpa-load)

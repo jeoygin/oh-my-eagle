@@ -138,6 +138,7 @@
                           (company-c-headers t)
                           (company-irony t)
                           (ecb t)
+                          (evil t)
                           (function-args t)
                           (ggtags t)
                           (go-mode t)
@@ -158,4 +159,4 @@
                           (ztree t)
                           (zzz-to-char t)
                           all))
-(load-package '(elpa common x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp irony company tabbar org ace-window))
+(load-package '(elpa common x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp irony company tabbar org ace-window evil))
