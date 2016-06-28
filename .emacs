@@ -159,4 +159,4 @@
                           (ztree t)
                           (zzz-to-char t)
                           all))
-(load-package '(elpa common x-clipboard bracket tab color-theme yasnippet ecb xcscope python cpp irony company tabbar org ace-window evil))
+(load-package '(elpa common x-clipboard bracket tab color-theme smart-mode-line yasnippet ecb xcscope python cpp company flycheck tabbar org ace-window))
