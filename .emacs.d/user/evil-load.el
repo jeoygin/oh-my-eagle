@@ -4,6 +4,7 @@
   :ensure t
   :init
   :config
+  (setq evil-default-state 'emacs)
   (evil-mode 1)
   )
 
