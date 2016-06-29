@@ -7,7 +7,7 @@
   (let ((package-name (replace-regexp-in-string "-load\\.el$" "" file)))
     (eval (macroexpand `(create-load-package-defun ,package-name)))))
 
-(defun load-package(packages)
+(defun nut/load-package(packages)
   (interactive)
   (if (listp packages)
     (dolist (f (append packages '()))
