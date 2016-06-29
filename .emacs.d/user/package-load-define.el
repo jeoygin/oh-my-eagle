@@ -1,5 +1,5 @@
 (defmacro create-load-package-defun (name)
-  (list 'defun (intern (concat "load-package-" name)) '()
+  (list 'defun (intern (concat "nut/load-package-" name)) '()
     (list 'interactive)
     (list 'require (list 'quote (intern (concat name "-load"))))))
 
@@ -11,7 +11,7 @@
   (interactive)
   (if (listp packages)
     (dolist (f (append packages '()))
-      (funcall (intern (concat "load-package-" (symbol-name f)))))
+      (funcall (intern (concat "nut/load-package-" (symbol-name f)))))
     nil))
 
 (provide 'package-load-define)
