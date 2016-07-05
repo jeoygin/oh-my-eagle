@@ -159,4 +159,4 @@
                           (ztree t)
                           (zzz-to-char t)
                           all))
-(nut/load-package '(elpa common x-clipboard bracket tab color-theme smart-mode-line yasnippet ecb xcscope python cpp dev tabbar org ace-window))
+(nut/load-package '(elpa common x-clipboard bracket tab color-theme smart-mode-line yasnippet ecb xcscope python cpp dev tabbar org swiper ace-window multiple-cursors))
