@@ -1,3 +1,4 @@
+(require 'use-package)
 (require 'helm-config)
 (require 'helm-grep)
 
@@ -91,6 +92,16 @@
 
 ;; If nil, you can slightly boost invoke speed in exchange for text color
 (setq helm-swoop-speed-or-color t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; PACKAGE: helm-ag                   ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(use-package helm-ag
+  :ensure t
+  :init
+  :config
+  (global-set-key (kbd "C-c h g") 'helm-ag)
+  )
 
 (helm-mode 1)
 
