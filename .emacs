@@ -110,7 +110,7 @@
 (global-set-key "\M-Z" 'zzz-up-to-char)
 
 (setq js-indent-level 2)
-(setq-default c-basic-offset 4)
+(setq-default c-basic-offset 2)
 
 ;; Define package load commands
 (add-to-list 'load-path "~/.emacs.d/user")
@@ -159,4 +159,4 @@
                           (ztree t)
                           (zzz-to-char t)
                           all))
-(nut/load-package '(elpa common x-clipboard bracket tab color-theme smart-mode-line yasnippet ecb xcscope python cpp dev tabbar org swiper ace-window multiple-cursors))
+(nut/load-package '(elpa common x-clipboard bracket tab color-theme smart-mode-line yasnippet ecb xcscope python cpp dev tabbar org swiper ace-window multiple-cursors evil))
